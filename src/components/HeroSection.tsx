@@ -4,8 +4,7 @@ import {
   Typography,
   Button,
   Paper,
-  TextField,
-  Stack
+  TextField
 } from '@mui/material';
 import {
   Phone as PhoneIcon,
