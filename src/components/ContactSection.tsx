@@ -54,7 +54,7 @@ const ContactSection: React.FC = () => {
   };
 
   const serviceAreas = [
-    'Ilocos Norte', 'Ilocos Sur', 'Abra', 'Paoay', 'Batac', 'Laoag', 'San Nicolas', 'Vintar', 'Bangui', 'Bacarra'
+    'Ilocos Norte', 'Ilocos Sur', 'Abra'
   ];
 
   const specializations = [
