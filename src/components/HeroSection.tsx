@@ -41,10 +41,10 @@ const HeroSection: React.FC = () => {
         alignItems: 'center' 
       }}>
         {/* Left Side - Content */}
-        <Box sx={{ flex: 1, color: 'white', textAlign: { xs: 'center', lg: 'left' } }}>
+        <Box component="section" sx={{ flex: 1, color: 'white', textAlign: { xs: 'center', lg: 'left' } }}>
           {/* Main Headline */}
           <Typography 
-            variant="h2" 
+            variant="h1" 
             component="h1"
             sx={{
               fontWeight: 700,
@@ -56,12 +56,13 @@ const HeroSection: React.FC = () => {
             }}
           >
             Switch to Solar and Achieve{' '}
-            <span style={{ color: '#ff6b35' }}>Zero Electric Bill</span> Today!
+            <span style={{ color: '#ffa726' }}>Zero Electric Bill</span> Today!
           </Typography>
 
           {/* Sub-headline */}
           <Typography 
-            variant="h6" 
+            variant="h2" 
+            component="h2"
             sx={{ 
               mb: { xs: 2, md: 3 }, // Reduced margin on mobile
               fontWeight: 800, // Much bolder for better visibility
@@ -79,6 +80,7 @@ const HeroSection: React.FC = () => {
           {/* Description */}
           <Typography 
             variant="body1" 
+            component="p"
             sx={{
               color: 'white',
               mb: { xs: 3, md: 4 }, // Reduced margin on mobile
@@ -90,12 +92,11 @@ const HeroSection: React.FC = () => {
               mx: { xs: 'auto', lg: '0' } // Center on mobile
             }}
           >
-            Professional solar PV installation in Ilocos Norte, Sur & Abra. 
-            Quality service + net metering assistance with no hidden costs.
+            Professional solar PV installation in <strong>Region 1 Philippines</strong>. Quality service + net metering assistance with no hidden costs. Serving <strong>Ilocos Norte, Ilocos Sur & Abra</strong> with expert solar solutions.
           </Typography>
 
           {/* Trust Signals */}
-          <Box sx={{ 
+          <Box component="section" sx={{ 
             mb: { xs: 3, md: 4 }, // Reduced margin on mobile
             display: 'flex', 
             flexDirection: { xs: 'column', sm: 'row' }, 
@@ -109,7 +110,7 @@ const HeroSection: React.FC = () => {
                 opacity: 0.9,
                 fontSize: { xs: '0.875rem', md: '0.875rem' } // Better mobile font sizing
               }}>
-                Trusted by 500+ Ilocos families
+                Trusted by 500+ <strong>Ilocos families</strong>
               </Typography>
             </Box>
             <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
@@ -125,7 +126,7 @@ const HeroSection: React.FC = () => {
           </Box>
 
           {/* Urgency & Social Proof */}
-          <Box sx={{ mb: { xs: 3, md: 4 }, textAlign: { xs: 'center', lg: 'left' } }}>
+          <Box component="section" sx={{ mb: { xs: 3, md: 4 }, textAlign: { xs: 'center', lg: 'left' } }}>
             <Typography variant="body2" sx={{ 
               color: '#ffa726', // Much lighter orange that's easier to see
               fontWeight: 800, // Much bolder for better visibility
@@ -145,7 +146,7 @@ const HeroSection: React.FC = () => {
           </Box>
 
           {/* CTA Buttons */}
-          <Box sx={{
+          <Box component="section" sx={{
             display: 'flex',
             flexDirection: { xs: 'column', sm: 'row' },
             gap: { xs: 1.5, md: 2 }, // Reduced gap on mobile
@@ -156,6 +157,7 @@ const HeroSection: React.FC = () => {
               size="large"
               startIcon={<PhoneIcon />}
               href="tel:+639610357748"
+              aria-label="Call Sunectrix for solar consultation"
               sx={{
                 backgroundColor: '#ff6b35',
                 color: 'white',
@@ -183,6 +185,7 @@ const HeroSection: React.FC = () => {
               href="https://wa.me/639610357748"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Contact Sunectrix on WhatsApp"
               sx={{
                 borderColor: 'white',
                 color: 'white',
@@ -206,14 +209,14 @@ const HeroSection: React.FC = () => {
         </Box>
 
         {/* Right Side - Lead Capture Form */}
-        <Box sx={{ 
+        <Box component="aside" sx={{ 
           flex: 1, 
           display: 'flex', 
           justifyContent: 'center', 
           alignItems: 'center',
           width: '100%' // Ensure full width on mobile
         }}>
-          <Paper sx={{ 
+          <Paper component="section" sx={{ 
             p: { xs: 3, md: 4 }, // Reduced padding on mobile
             backgroundColor: 'rgba(255, 255, 255, 0.95)', 
             backdropFilter: 'blur(10px)',
@@ -222,7 +225,7 @@ const HeroSection: React.FC = () => {
             width: '100%',
             boxShadow: '0 20px 40px rgba(0, 0, 0, 0.1)'
           }}>
-            <Typography variant="h5" sx={{ 
+            <Typography variant="h3" component="h2" sx={{ 
               mb: { xs: 2, md: 3 }, // Reduced margin on mobile
               color: 'text.primary', 
               textAlign: 'center',
@@ -231,7 +234,7 @@ const HeroSection: React.FC = () => {
             }}>
               Get Your Free Quote
             </Typography>
-            <Typography variant="body2" sx={{ 
+            <Typography variant="body2" component="p" sx={{ 
               mb: { xs: 2, md: 3 }, // Reduced margin on mobile
               textAlign: 'center',
               color: 'text.secondary',
@@ -239,12 +242,14 @@ const HeroSection: React.FC = () => {
             }}>
               Fill out the form below and we'll contact you within 24 hours
             </Typography>
-            <Stack spacing={{ xs: 2, md: 3 }}> {/* Reduced spacing on mobile */}
+            <Box component="form" action="#" method="POST" sx={{ display: 'flex', flexDirection: 'column', gap: { xs: 2, md: 3 } }}>
               <TextField 
                 fullWidth 
                 placeholder="Your Name" 
                 variant="outlined" 
                 size="medium"
+                name="name"
+                aria-label="Your full name"
                 sx={{
                   '& .MuiOutlinedInput-root': {
                     borderRadius: 2
@@ -256,6 +261,8 @@ const HeroSection: React.FC = () => {
                 placeholder="Phone Number" 
                 variant="outlined" 
                 size="medium"
+                name="phone"
+                aria-label="Your phone number"
                 sx={{
                   '& .MuiOutlinedInput-root': {
                     borderRadius: 2
@@ -268,14 +275,15 @@ const HeroSection: React.FC = () => {
                 variant="outlined" 
                 size="medium"
                 select
+                name="propertyType"
                 SelectProps={{ native: true }}
+                aria-label="Select your property type"
                 sx={{
                   '& .MuiOutlinedInput-root': {
                     borderRadius: 2
                   }
                 }}
               >
-                <option value="">Select Property Type</option>
                 <option value="residential">Residential</option>
                 <option value="commercial">Commercial</option>
                 <option value="industrial">Industrial</option>
@@ -285,6 +293,8 @@ const HeroSection: React.FC = () => {
                 placeholder="Monthly Electric Bill (PHP)" 
                 variant="outlined" 
                 size="medium"
+                name="monthlyBill"
+                aria-label="Your monthly electric bill in Philippine Peso"
                 sx={{
                   '& .MuiOutlinedInput-root': {
                     borderRadius: 2
@@ -295,6 +305,8 @@ const HeroSection: React.FC = () => {
                 fullWidth
                 variant="contained"
                 size="large"
+                type="submit"
+                aria-label="Submit your solar quote request"
                 sx={{
                   backgroundColor: '#ff6b35',
                   py: { xs: 1.25, md: 1.5 }, // Reduced padding on mobile
@@ -310,7 +322,7 @@ const HeroSection: React.FC = () => {
               >
                 Get Free Quote
               </Button>
-            </Stack>
+            </Box>
           </Paper>
         </Box>
       </Box>

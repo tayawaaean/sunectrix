@@ -1,10 +1,10 @@
 User-agent: *
 Allow: /
 
-# Sitemap location
+# Sitemap
 Sitemap: https://sunectrix.com/sitemap.xml
 
-# Crawl delay (optional)
+# Crawl-delay
 Crawl-delay: 1
 
 # Disallow admin areas (if any)
@@ -12,6 +12,8 @@ Disallow: /admin/
 Disallow: /private/
 
 # Allow important pages
-Allow: /services/
-Allow: /contact/
-Allow: /about/
+Allow: /#home
+Allow: /#services
+Allow: /#projects
+Allow: /#benefits
+Allow: /#contact
