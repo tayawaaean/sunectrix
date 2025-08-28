@@ -98,6 +98,24 @@ html {
 /* Responsive image handling */
 .responsive-image {
   max-width: 100%;
+
+/* Map container styles */
+.map-container {
+  height: 100% !important;
+  width: 100% !important;
+}
+
+.leaflet-container {
+  height: 100% !important;
+  width: 100% !important;
+  min-height: 600px !important;
+}
+
+/* Ensure map fills its container */
+.leaflet-map-pane {
+  height: 100% !important;
+  width: 100% !important;
+}
   height: auto;
   display: block;
 }

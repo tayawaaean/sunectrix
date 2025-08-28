@@ -4,6 +4,7 @@ import { ThemeProvider, createTheme } from '@mui/material/styles'
 import CssBaseline from '@mui/material/CssBaseline'
 import App from './App.tsx'
 import './index.css'
+import 'leaflet/dist/leaflet.css';
 
 // Create a custom theme matching Sunectrix logo colors
 const theme = createTheme({
