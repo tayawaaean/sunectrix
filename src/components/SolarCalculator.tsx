@@ -1,30 +1,23 @@
 import React, { useState } from 'react';
-import { 
-  Box, 
-  Card, 
-  CardContent, 
-  Typography, 
-  TextField, 
-  Button, 
-  Slider, 
-  FormControl, 
-  InputLabel, 
-  Select, 
+import {
+  Box,
+  Card,
+  CardContent,
+  Typography,
+  TextField,
+  Button,
+  Slider,
+  FormControl,
+  InputLabel,
+  Select,
   MenuItem,
-  Paper,
-  Divider,
-  Chip,
   Switch,
   FormControlLabel,
-  Alert
+  Divider
 } from '@mui/material';
-import { 
-  Calculate, 
-  Park,
-  Lightbulb,
-  BatteryChargingFull,
-  AttachMoney,
-  TrendingUp,
+import {
+  Calculate,
+  SolarPower,
   Nature,
   LocationOn,
   Roofing,
@@ -511,25 +504,25 @@ const SolarCalculator: React.FC = () => {
                     System Specifications
                   </Typography>
                   <Box sx={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 2 }}>
-                    <Paper sx={{ p: 2, textAlign: 'center', backgroundColor: '#f8f9fa' }}>
-                      <Lightbulb sx={{ fontSize: '2rem', color: '#ff6b35', mb: 1 }} />
+                    <Box sx={{ textAlign: 'center' }}>
+                      <SolarPower sx={{ fontSize: '2rem', color: '#ff6b35', mb: 1 }} />
                       <Typography variant="h4" color="primary" sx={{ fontWeight: 700 }}>
                         {results.systemSize.toFixed(2)} kW
                       </Typography>
                       <Typography variant="body2" color="text.secondary">
                         System Size
                       </Typography>
-                    </Paper>
+                    </Box>
                     
-                    <Paper sx={{ p: 2, textAlign: 'center', backgroundColor: '#f8f9fa' }}>
-                      <BatteryChargingFull sx={{ fontSize: '2rem', color: '#1976d2', mb: 1 }} />
+                    <Box sx={{ textAlign: 'center' }}>
+                      <SolarPower sx={{ fontSize: '2rem', color: '#1976d2', mb: 1 }} />
                       <Typography variant="h4" color="primary" sx={{ fontWeight: 700 }}>
                         {results.panelCount}
                       </Typography>
                       <Typography variant="body2" color="text.secondary">
                         Solar Panels (400W)
                       </Typography>
-                    </Paper>
+                    </Box>
                   </Box>
                 </Box>
 
@@ -608,17 +601,17 @@ const SolarCalculator: React.FC = () => {
                     Environmental Impact
                   </Typography>
                   <Box sx={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 2 }}>
-                                         <Box sx={{ textAlign: 'center' }}>
-                       <Nature sx={{ fontSize: '2rem', color: '#2e7d32', mb: 1 }} />
-                       <Typography variant="h6" color="success.main" sx={{ fontWeight: 700 }}>
-                         {results.carbonOffset.toFixed(0)}
-                       </Typography>
-                       <Typography variant="caption" color="text.secondary">
-                         kg CO₂ avoided/year
-                       </Typography>
-                     </Box>
                     <Box sx={{ textAlign: 'center' }}>
-                      <Park sx={{ fontSize: '2rem', color: '#2e7d32', mb: 1 }} />
+                      <Nature sx={{ fontSize: '2rem', color: '#2e7d32', mb: 1 }} />
+                      <Typography variant="h6" color="success.main" sx={{ fontWeight: 700 }}>
+                        {results.carbonOffset.toFixed(0)}
+                      </Typography>
+                      <Typography variant="caption" color="text.secondary">
+                        kg CO₂ avoided/year
+                      </Typography>
+                    </Box>
+                    <Box sx={{ textAlign: 'center' }}>
+                      <SolarPower sx={{ fontSize: '2rem', color: '#2e7d32', mb: 1 }} />
                       <Typography variant="h6" color="success.main" sx={{ fontWeight: 700 }}>
                         {results.treesEquivalent.toFixed(0)}
                       </Typography>

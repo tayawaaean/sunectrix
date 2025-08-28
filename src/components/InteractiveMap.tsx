@@ -1,16 +1,14 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { MapContainer, TileLayer, Marker, Popup, Polygon, Polyline, useMap, LayersControl } from 'react-leaflet';
-import { Box, Card, CardContent, Typography, Button, TextField, Chip, IconButton, Tooltip } from '@mui/material';
-import { 
-  Calculate, 
-  Clear, 
-  Save,
-  LocationOn,
-  Info,
+import { MapContainer, TileLayer, Popup, Polyline, LayersControl } from 'react-leaflet';
+import { Box, Card, CardContent, Typography, Button, Chip } from '@mui/material';
+import {
   Add,
   Edit,
+  Clear,
+  Download,
   Map,
-  Satellite
+  Satellite,
+  Layers
 } from '@mui/icons-material';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
@@ -243,7 +241,7 @@ const InteractiveMap: React.FC = () => {
         </LayersControl>
         
         {/* Ilocos Norte boundary highlight */}
-        <Polygon
+        <Polyline
           positions={ilocosNorteBounds}
           pathOptions={{
             color: '#ff6b35',
@@ -261,7 +259,7 @@ const InteractiveMap: React.FC = () => {
               💡 Tip: Use satellite view for better rooftop identification
             </Typography>
           </Popup>
-        </Polygon>
+        </Polyline>
 
         {/* Drawing line preview */}
         {isDrawing && drawingPoints.length > 0 && (
@@ -320,7 +318,7 @@ const InteractiveMap: React.FC = () => {
        }}>
         <CardContent sx={{ p: 2 }}>
           <Typography variant="h6" gutterBottom sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-            <Calculate color="primary" />
+            <Add color="primary" />
             Solar Rooftop Calculator
           </Typography>
           
@@ -415,7 +413,7 @@ const InteractiveMap: React.FC = () => {
           {/* Solar Data Info */}
           <Box sx={{ mb: 2 }}>
             <Typography variant="subtitle2" gutterBottom>
-              <Info fontSize="small" sx={{ mr: 1, verticalAlign: 'middle' }} />
+              <Layers fontSize="small" sx={{ mr: 1, verticalAlign: 'middle' }} />
               Ilocos Norte Solar Data
             </Typography>
             <Box sx={{ display: 'flex', gap: 1, mb: 1 }}>
@@ -454,7 +452,7 @@ const InteractiveMap: React.FC = () => {
               variant="contained"
               size="small"
               onClick={exportData}
-              startIcon={<Save />}
+              startIcon={<Download />}
             >
               Export Data
             </Button>
